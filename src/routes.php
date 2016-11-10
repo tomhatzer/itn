@@ -25,7 +25,7 @@ $app->get('/club', function ($request, $response, $args) {
     );
     return $newResponse; */
     //$response = $response->withHeader('Content-Type', 'application/json;charset=utf-8');
-    return $response->withJson($clubs);
+    return $response->withJson($clubs, null, JSON_UNESCAPED_UNICODE);
 });
 
 $app->get('/test', function ($request, $response) {
@@ -36,5 +36,5 @@ $app->get('/test', function ($request, $response) {
     ];
     //$response = $response->withHeader('Content-Type', 'application/json;charset=utf-8');
     //return $response->withJson("Österreich");
-    return $response->withJson($data);
+    return $response->withJson($data, null, JSON_UNESCAPED_UNICODE);
 });
